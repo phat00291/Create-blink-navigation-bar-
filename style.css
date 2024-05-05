@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Noto Sans", sans-serif;
+}
+body {
+    background-color: #1b1d28;
+}
+
+.container {
+    padding: 0rem 2rem;
+    display: block;
+    height: 100vh;
+ 
+    header {
+        & .hcon-list {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fff;
+            margin: 0rem 0.45rem;
+            padding: 1rem;
+            & .menu-list {
+                display: flex;
+                gap: 32px;
+                list-style-type: none;
+                
+                & .btt-blink .btnblink  {
+                    position: relative;
+                    display: inline-block;
+                    color: #ffffff;
+                    padding: 0.55rem 1rem;
+                    background-color: #1b1d28;
+                    text-decoration: none;
+                    border-radius: 15px;
+                    overflow: hidden;
+                }
+                & .btt-blink .btnblink .overlay {
+                    position: absolute;
+                    height: 400px;
+                    width: 400px;
+                    background-color: #fff;
+                    top: 0;
+                    left: 0;
+                    border-radius: 50%;
+                    transform: translate(-50%, -50%);
+                    opacity: 0.5;
+                    animation: blink 2s ease-out  infinite;
+                }
+                
+            }
+            
+        }
+    }
+}
+@keyframes blink {
+    0%{
+        height: 0px;
+        width: 0px;
+        opacity: 0.5;
+    }
+    100%{
+        height: 400px;
+        width: 400px;
+    }
+    
+}/* ffffffffffffffffffffffffffffffffffffffffffff */
+.ctn-fakeimg {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    background-color: #ffffff;
+    overflow: hidden;
+}
+.ctn-fakeimg::before {
+    content: ' ';
+    position: absolute;
+    background: radial-gradient(#1b1d2875,transparent,
+    transparent);
+    left: var(--x);
+    top: var(--y);
+    transform: translate(-50%,-50%);
+    width: 400px;
+    height: 400px;
+    opacity: 0;
+    transition: 0.2s;
+}
+.ctn-fakeimg:hover::before{
+    opacity: 1;
+}
+.ctn-fakeimg::after{
+    content: '';
+    position: absolute;
+    inset: 2px;    
+    background-color: #f8f8f87a;
+}
+/* ffffffffffffffffffffffffffffffffffffffffffff */
